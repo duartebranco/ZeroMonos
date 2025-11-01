@@ -43,7 +43,7 @@ jobs:
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               with:
                   args: >
-                      -Dsonar.projectKey=duartebranco
+                      -Dsonar.projectKey=duartebranco_ZeroMonos
                       -Dsonar.organization=duartebranco
                       -Dsonar.java.binaries=target/classes
                       -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
