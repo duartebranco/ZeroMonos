@@ -1,0 +1,330 @@
+:root {
+    --brand: #16a34a;
+    --brand-strong: #15803d;
+    --muted: #6b7280;
+    --bg: #f7fbf7;
+    --card: #ffffff;
+    --radius: 10px;
+    --gap: 1rem;
+    --shadow: 0 6px 18px rgba(13, 27, 62, 0.08);
+    --glass: rgba(255, 255, 255, 0.7);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Apply the page background to html to ensure a single continuous gradient */
+html {
+    background: linear-gradient(180deg, #f7fbf7 0%, #e8f6ea 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial;
+    /* keep body background transparent so html's gradient shows through */
+    background: transparent;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+}
+
+/* Top navigation / header */
+.topbar {
+    background: linear-gradient(90deg, var(--brand), var(--brand-strong));
+    color: white;
+    padding: 0.6rem 1rem;
+    box-shadow: 0 2px 8px rgba(18, 26, 46, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+.topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: space-between;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+}
+.brand .logo {
+    width: 36px;
+    height: 36px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.06);
+    font-size: 18px;
+}
+
+nav.nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+nav.nav a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition:
+        background 120ms ease,
+        transform 120ms ease;
+}
+nav.nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Page container */
+.page {
+    flex: 1;
+    max-width: 1100px;
+    margin: 2.25rem auto;
+    padding: 1rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+/* Form styling (used by public booking page) */
+label {
+    display: block;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #e6f3ea;
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 0.75rem;
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+/* Enhanced styling for form elements */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+select:disabled {
+    background: #f8f9fa;
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+select:disabled:hover {
+    border-color: #e6f3ea;
+}
+
+.table td select,
+.table td .btn {
+    margin-bottom: 0;
+}
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+/* Buttons: base styles for both button elements and link-buttons */
+.btn {
+    background: var(--brand);
+    color: white;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none; /* remove underline for anchor buttons */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        background 150ms ease,
+        transform 120ms ease,
+        box-shadow 120ms ease;
+}
+
+/* Hover and focus states for primary button */
+.btn:hover,
+.btn:focus {
+    background: var(--brand-strong);
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.08);
+}
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Secondary button (outline) */
+.btn.secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid #e6f3ea;
+}
+
+/* Hover and focus for secondary button:
+   give a subtle green tint and make border/foreground match brand */
+.btn.secondary:hover,
+.btn.secondary:focus {
+    background: rgba(21, 128, 61, 0.08); /* translucent brand-strong */
+    border-color: var(--brand);
+    color: var(--brand-strong);
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.04);
+}
+.btn.secondary:active {
+    transform: translateY(0);
+}
+
+/* Accessibility: visible focus ring for keyboard users */
+.btn:focus-visible,
+.btn.secondary:focus-visible {
+    outline: 3px solid rgba(21, 128, 61, 0.18);
+    outline-offset: 3px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Table styles (used by staff page) */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+.table th,
+.table td {
+    text-align: left;
+    padding: 0.75rem 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+.table th {
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: white;
+}
+.status.RECEIVED {
+    background: #64748b;
+}
+.status.ASSIGNED {
+    background: var(--brand);
+}
+.status.IN_PROGRESS {
+    background: #f59e0b;
+}
+.status.COMPLETED {
+    background: #10b981;
+}
+.status.CANCELLED {
+    background: #dc3545;
+}
+
+/* Availability info styling */
+#availability-info {
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(22, 163, 74, 0.05);
+    border-left: 3px solid var(--brand);
+    font-style: italic;
+}
+
+#availability-info:empty {
+    display: none;
+}
+
+/* Footer */
+footer.site-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .topbar-inner {
+        padding: 0 0.6rem;
+    }
+    .page {
+        padding: 0 0.6rem;
+        margin-top: 1rem;
+    }
+    nav.nav {
+        display: none;
+    }
+    .brand {
+        gap: 0.5rem;
+    }
+}

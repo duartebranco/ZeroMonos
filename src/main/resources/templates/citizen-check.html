@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/layout :: head('Check Appointment')}"></head>
+    <body>
+        <!-- Header -->
+        <div th:replace="~{fragments/layout :: header}"></div>
+
+        <!-- Main content injected into layout :: content via its section fragment -->
+        <div
+            th:replace="~{fragments/layout :: content (title='Check Appointment')}"
+        >
+            <section th:fragment="section">
+                <p class="muted" style="margin-top: 0; margin-bottom: 0.5rem">
+                    Introduce the received token to check the appointment
+                    status.
+                </p>
+
+                <div style="display: flex; gap: 0.5rem; align-items: center">
+                    <input
+                        id="token"
+                        type="text"
+                        placeholder="Token (8 characters)"
+                        style="flex: 1"
+                    />
+                    <button
+                        style="margin-bottom: 0.75rem"
+                        id="checkBtn"
+                        class="btn"
+                    >
+                        Search
+                    </button>
+                </div>
+
+                <pre
+                    id="checkResult"
+                    style="
+                        margin-top: 0.75rem;
+                        background: #f8fafc;
+                        padding: 0.75rem;
+                        border-radius: 8px;
+                        overflow: auto;
+                    "
+                >
+No results</pre
+                >
+
+                <div
+                    id="cancelButtonContainer"
+                    style="margin-top: 1rem; display: none; gap: 0.5rem"
+                >
+                    <button
+                        id="cancelBookingBtn"
+                        class="btn"
+                        style="background-color: #dc3545"
+                    >
+                        Cancel Booking
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer & scripts from layout -->
+        <div th:replace="~{fragments/layout :: footer}"></div>
+        <div th:replace="~{fragments/layout :: scripts}"></div>
+        <script th:src="@{/js/citizen.js}" defer></script>
+    </body>
+</html>

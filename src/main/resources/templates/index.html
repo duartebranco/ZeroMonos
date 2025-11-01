@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/layout :: head('Welcome')}"></head>
+    <body>
+        <div
+            style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 1rem 0;
+            "
+        >
+            <div
+                class="logo"
+                aria-hidden="true"
+                style="
+                    width: 72px;
+                    height: 72px;
+                    font-size: 36px;
+                    display: inline-grid;
+                    place-items: center;
+                    border-radius: 12px;
+                "
+            >
+                ♻️
+            </div>
+            <div
+                style="
+                    font-weight: 700;
+                    font-size: 1.25rem;
+                    color: inherit;
+                    text-align: center;
+                "
+            >
+                ZeroMonos
+            </div>
+        </div>
+        <section th:fragment="section">
+            <div
+                style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 40vh;
+                    padding: 1rem;
+                "
+            >
+                <div
+                    class="card"
+                    style="max-width: 420px; width: 100%; text-align: center"
+                >
+                    <h1 style="margin-top: 0.2rem; margin-bottom: 0.25rem">
+                        Welcome
+                    </h1>
+                    <p class="muted" style="margin-top: 0; margin-bottom: 1rem">
+                        Select the type of user to access the appropriate
+                        portal.
+                    </p>
+
+                    <div
+                        style="
+                            display: flex;
+                            gap: 0.75rem;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <a
+                            th:href="@{/citizen}"
+                            class="btn"
+                            role="button"
+                            style="min-width: 140px"
+                        >
+                            I'm a Citizen
+                        </a>
+
+                        <a
+                            th:href="@{/staff}"
+                            class="btn secondary"
+                            role="button"
+                            style="min-width: 140px"
+                        >
+                            I'm a Staff
+                        </a>
+                    </div>
+
+                    <p
+                        class="muted"
+                        style="margin-top: 1rem; font-size: 0.9rem"
+                    >
+                        You can also use the direct links:
+                        <code>/citizen</code> ou <code>/staff</code>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer & scripts -->
+        <div th:replace="~{fragments/layout :: footer}"></div>
+        <div th:replace="~{fragments/layout :: scripts}"></div>
+    </body>
+</html>

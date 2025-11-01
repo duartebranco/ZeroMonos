@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/layout :: head('Book Collection')}"></head>
+    <body>
+        <!-- Header -->
+        <div th:replace="~{fragments/layout :: header}"></div>
+
+        <!-- Main content injected into layout :: content via its section fragment -->
+        <div
+            th:replace="~{fragments/layout :: content (title='Book Collection')}"
+        >
+            <section th:fragment="section">
+                <p class="muted">
+                    Use this form to schedule a bulky item collection. Fill in
+                    your details, select the municipality, choose a collection
+                    date (today or future), and pick an available time slot.
+                    Time slots are 09:00-17:00.
+                </p>
+
+                <form id="bookingForm">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Ex.: Maria Silva"
+                            pattern="^[A-Z][a-z]+(\s[A-Z][a-z]+)+$"
+                            title="Name must have at least two words, each starting with uppercase letter, letters only"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label for="municipality">Municipality</label>
+                        <input
+                            id="municipality"
+                            name="municipality"
+                            list="municipalityList"
+                            placeholder="Start typing to search..."
+                            autocomplete="off"
+                            required
+                        />
+                        <datalist id="municipalityList">
+                            <!-- Populate options from server-provided list -->
+                            <option
+                                th:each="m : ${municipalities}"
+                                th:value="${m}"
+                            ></option>
+                        </datalist>
+                    </div>
+
+                    <div>
+                        <label for="date">Collection Date</label>
+                        <input type="date" id="date" name="date" required />
+                    </div>
+
+                    <div>
+                        <label for="timeSlot">Time Slot</label>
+                        <select id="timeSlot" name="timeSlot" required disabled>
+                            <option value="">
+                                Select date and municipality first
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="itemType">Item Type</label>
+                        <select id="itemType" name="itemType" required>
+                            <option value="">Select waste type</option>
+                            <option
+                                th:each="type : ${itemTypes}"
+                                th:value="${type.name()}"
+                                th:text="${type.displayName}"
+                            ></option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="description">Item Description</label>
+                        <input
+                            id="description"
+                            name="description"
+                            placeholder="Ex.: old refrigerator, 200L"
+                            maxlength="255"
+                            minlength="4"
+                            title="Description must have at least 4 characters and be less than 255 characters"
+                            required
+                        />
+                    </div>
+
+                    <div class="actions" style="justify-content: flex-start">
+                        <button
+                            type="button"
+                            class="btn secondary"
+                            id="clearBtn"
+                        >
+                            Clear
+                        </button>
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+
+                    <div
+                        id="feedback"
+                        class="muted"
+                        style="margin-top: 1.2rem"
+                    ></div>
+
+                    <pre
+                        id="checkResult"
+                        style="
+                            margin-top: 1.2rem;
+                            background: #f8fafc;
+                            padding: 0.75rem;
+                            border-radius: 8px;
+                            overflow: auto;
+                        "
+                    >
+No results</pre
+                    >
+                </form>
+            </section>
+        </div>
+
+        <!-- Footer & scripts from layout -->
+        <div th:replace="~{fragments/layout :: footer}"></div>
+        <div th:replace="~{fragments/layout :: scripts}"></div>
+
+        <!-- Page-specific scripts -->
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            // municipalities is rendered as a JS array by Thymeleaf
+            var MUNICIPALITIES = /*[[${municipalities}]]*/ [];
+            /*]]>*/
+        </script>
+
+        <script th:src="@{/js/citizen.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/layout :: head('Booking Database')}"></head>
+    <body>
+        <div th:replace="~{fragments/layout :: header}"></div>
+
+        <!-- Insert into layout content -->
+        <div
+            th:replace="~{fragments/layout :: content (title='Booking Database')}"
+        >
+            <section th:fragment="section">
+                <div style="display: flex; flex-direction: column; gap: 1rem">
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 1rem;
+                            align-items: center;
+                            margin-bottom: 0.25rem;
+                        "
+                    >
+                        <div style="flex: 1; display: flex; gap: 0.5rem">
+                            <input
+                                id="searchMunicipality"
+                                type="search"
+                                placeholder="Search by municipality..."
+                                style="
+                                    flex: 1;
+                                    margin-bottom: 0;
+                                    padding: 0.6rem;
+                                    border-radius: 8px;
+                                    border: 1px solid #e6eefc;
+                                "
+                            />
+                            <button
+                                id="searchBtn"
+                                class="btn secondary"
+                                title="Search"
+                            >
+                                Search
+                            </button>
+                            <button
+                                id="refreshBtn"
+                                class="btn secondary"
+                                title="Refresh"
+                            >
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="padding: 0">
+                        <table
+                            class="table"
+                            aria-describedby="staff-table-desc"
+                            id="bookingsTable"
+                        >
+                            <caption
+                                id="staff-table-desc"
+                                style="
+                                    text-align: left;
+                                    padding: 0.75rem 1rem;
+                                    font-weight: 700;
+                                "
+                            >
+                                Bookings
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Token</th>
+                                    <th>Citizen</th>
+                                    <th>Municipality</th>
+                                    <th>Item Type</th>
+                                    <th>Description</th>
+                                    <th>Scheduled</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="b : ${bookings}">
+                                    <td th:text="${b.id}"></td>
+                                    <td th:text="${b.token}"></td>
+                                    <td th:text="${b.citizenName}"></td>
+                                    <td th:text="${b.municipality}"></td>
+                                    <td>
+                                        <span
+                                            th:text="${b.itemType?.displayName ?: 'N/A'}"
+                                            th:classappend="'item-type ' + ${b.itemType?.name()?.toLowerCase()}"
+                                        ></span>
+                                    </td>
+                                    <td th:text="${b.description}"></td>
+                                    <td
+                                        th:text="${b.bookingDate + ' ' + b.formattedTimeSlot}"
+                                    ></td>
+                                    <td
+                                        data-status
+                                        th:attr="data-status=${b.status}"
+                                    >
+                                        <span
+                                            th:text="${b.status}"
+                                            th:classappend="' status ' + ${b.status}"
+                                            >RECEIVED</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <select
+                                            th:attr="onchange=|updateStatus(${b.id}, this.value)|"
+                                        >
+                                            <option value="">--</option>
+                                            <option value="ASSIGNED">
+                                                ASSIGNED
+                                            </option>
+                                            <option value="IN_PROGRESS">
+                                                IN_PROGRESS
+                                            </option>
+                                            <option value="COMPLETED">
+                                                COMPLETED
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button
+                                            class="btn secondary delete-booking"
+                                            th:attr="data-delete-id=${b.id}"
+                                            title="Delete booking"
+                                        >
+                                            🗑️
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr th:if="${#lists.isEmpty(bookings)}">
+                                    <td
+                                        colspan="10"
+                                        style="
+                                            text-align: center;
+                                            padding: 1rem;
+                                        "
+                                    >
+                                        No bookings found.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div th:replace="~{fragments/layout :: footer}"></div>
+        <div th:replace="~{fragments/layout :: scripts}"></div>
+        <script th:src="@{/js/staff.js}"></script>
+    </body>
+</html>
