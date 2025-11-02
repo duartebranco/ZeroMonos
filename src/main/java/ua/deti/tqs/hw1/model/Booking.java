@@ -77,7 +77,9 @@ public class Booking {
     private String status = "RECEIVED";
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public Booking() {}
+    public Booking() {
+        // Default no-arg constructor required by JPA/Hibernate for entity instantiation
+    }
 
     // Getters and Setters
     public Long getId() {

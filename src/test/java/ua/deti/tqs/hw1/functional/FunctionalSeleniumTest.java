@@ -17,9 +17,10 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.transaction.annotation.Transactional;
+import ua.deti.tqs.hw1.repository.BookingRepository;
 
 /**
  * Functional/End-to-End tests using Selenium WebDriver with Firefox.
@@ -31,13 +32,17 @@ import org.springframework.transaction.annotation.Transactional;
  * These tests are BDD-style with clear Given-When-Then structure.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Transactional
 @DisplayName("Functional Tests - Selenium/BDD")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FunctionalSeleniumTest {
 
+    private static boolean databaseCleaned = false;
+
     @LocalServerPort
     private int port;
+
+    @Autowired
+    private BookingRepository bookingRepository;
 
     private WebDriver driver;
     private String baseUrl;
@@ -52,6 +57,12 @@ class FunctionalSeleniumTest {
 
     @BeforeEach
     void setUp() {
+        // Clean the database once before all tests run (on first test method only)
+        if (!databaseCleaned) {
+            bookingRepository.deleteAll();
+            databaseCleaned = true;
+        }
+
         // Setup WebDriver Manager for Firefox
         WebDriverManager.firefoxdriver().setup();
 
