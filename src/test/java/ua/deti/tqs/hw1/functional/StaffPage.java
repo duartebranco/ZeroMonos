@@ -2,7 +2,6 @@ package ua.deti.tqs.hw1.functional;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -99,7 +98,7 @@ public class StaffPage {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
                 return cells.size() > 3 ? cells.get(3).getText() : "";
             })
-            .collect(Collectors.toList());
+            .toList();
     }
 
     public List<String> getBookingCitizenNames() {
@@ -111,7 +110,7 @@ public class StaffPage {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
                 return cells.size() > 2 ? cells.get(2).getText() : "";
             })
-            .collect(Collectors.toList());
+            .toList();
     }
 
     public List<String> getBookingStatuses() {
@@ -123,7 +122,7 @@ public class StaffPage {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
                 return cells.size() > 7 ? cells.get(7).getText() : "";
             })
-            .collect(Collectors.toList());
+            .toList();
     }
 
     public boolean isNoBookingsMessageDisplayed() {
@@ -207,7 +206,7 @@ public class StaffPage {
                 );
                 return booking;
             })
-            .collect(Collectors.toList());
+            .toList();
     }
 
     /**
