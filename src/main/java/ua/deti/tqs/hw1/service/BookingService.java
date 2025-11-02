@@ -28,21 +28,11 @@ public class BookingService {
      * Create a new booking with availability validation.
      */
     public Booking create(Booking booking) {
-        logger.info(
-            "Creating new booking for {} in {} on {} at slot {}",
-            booking.getCitizenName(),
-            booking.getMunicipality(),
-            booking.getBookingDate(),
-            booking.getTimeSlot()
-        );
+        logger.info("Creating new booking");
 
         // Validate booking date
         if (!isValidBookingDate(booking.getBookingDate())) {
-            logger.warn(
-                "Booking creation failed: Invalid date {} for {}",
-                booking.getBookingDate(),
-                booking.getCitizenName()
-            );
+            logger.warn("Booking creation failed: Invalid date");
             throw new IllegalArgumentException(
                 "Invalid booking date. Date must be today or in the future."
             );
@@ -56,12 +46,7 @@ public class BookingService {
                 booking.getMunicipality()
             )
         ) {
-            logger.warn(
-                "Booking creation failed: Time slot {} on {} already occupied in {}",
-                booking.getTimeSlot(),
-                booking.getBookingDate(),
-                booking.getMunicipality()
-            );
+            logger.warn("Booking creation failed: Time slot already occupied");
             throw new IllegalArgumentException(
                 String.format(
                     "Time slot %s on %s is not available for %s",
@@ -74,9 +59,8 @@ public class BookingService {
 
         Booking savedBooking = repo.save(booking);
         logger.info(
-            "Booking created successfully with token: {} for {}",
-            savedBooking.getToken(),
-            savedBooking.getCitizenName()
+            "Booking created successfully with token: {}",
+            savedBooking.getToken()
         );
         return savedBooking;
     }
@@ -136,11 +120,10 @@ public class BookingService {
                 Booking savedBooking = repo.save(b);
 
                 logger.info(
-                    "Booking {} status changed from {} to {} for citizen {}",
+                    "Booking {} status changed from {} to {}",
                     id,
                     oldStatus,
-                    status,
-                    b.getCitizenName()
+                    status
                 );
 
                 // Log availability change when cancelled
@@ -148,10 +131,7 @@ public class BookingService {
                     "CANCELLED".equals(status) && !"CANCELLED".equals(oldStatus)
                 ) {
                     logger.info(
-                        "Time slot {} on {} for {} is now available (booking {} cancelled)",
-                        formatTimeSlot(b.getTimeSlot()),
-                        b.getBookingDate(),
-                        b.getMunicipality(),
+                        "Time slot is now available (booking {} cancelled)",
                         b.getId()
                     );
                 }
