@@ -131,6 +131,10 @@ public class BookReservePage {
             WebElement result = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(checkResultPre)
             );
+            // Wait for the result content to be populated (contains "token", not just "No results")
+            wait.until(
+                ExpectedConditions.textToBePresentInElement(result, "token")
+            );
             return result.getText();
         } catch (Exception e) {
             return "";
