@@ -57,12 +57,10 @@ public class StaffPage {
             ExpectedConditions.elementToBeClickable(searchButton)
         );
         searchBtn.click();
-        // Wait a bit for client-side filtering to complete
-        try {
-            Thread.sleep(800);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        // Wait for table to be updated after search
+        wait.until(
+            ExpectedConditions.presenceOfAllElementsLocatedBy(tableRows)
+        );
     }
 
     public void clickRefresh() {
@@ -321,17 +319,17 @@ public class StaffPage {
 
             // Wait for confirmation dialog to appear and handle it
             try {
-                Thread.sleep(500); // Small delay for dialog to appear
                 Alert alert = wait.until(ExpectedConditions.alertIsPresent());
                 alert.accept();
             } catch (Exception e) {
                 // If no alert appears, that's ok - the dialog might be custom
                 // Try clicking the confirm button in the custom dialog
                 try {
-                    Thread.sleep(500);
-                    WebElement confirmBtn = driver.findElement(
-                        By.xpath(
-                            "//button[contains(@class, 'btn') and contains(text(), 'Confirm')]"
+                    WebElement confirmBtn = wait.until(
+                        ExpectedConditions.elementToBeClickable(
+                            By.xpath(
+                                "//button[contains(@class, 'btn') and contains(text(), 'Confirm')]"
+                            )
                         )
                     );
                     confirmBtn.click();
@@ -340,8 +338,10 @@ public class StaffPage {
                 }
             }
 
-            // Wait a bit for the update to complete
-            Thread.sleep(1000);
+            // Wait for the table to be updated after status change
+            wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(tableRows)
+            );
             return true;
         } catch (Exception e) {
             return false;

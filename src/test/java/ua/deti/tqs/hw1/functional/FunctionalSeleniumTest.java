@@ -118,12 +118,6 @@ class FunctionalSeleniumTest {
         bookReservePage.fillDate(bookingDate.toString());
 
         // Wait for time slot to be enabled after date selection
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         assertThat(bookReservePage.isTimeSlotEnabled())
             .as("Time slot should be enabled after date is filled")
             .isTrue();
@@ -134,12 +128,6 @@ class FunctionalSeleniumTest {
         bookReservePage.submit();
 
         // Wait for booking to be processed
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         String resultAveiro = bookReservePage.getCheckResultContent();
         assertThat(resultAveiro)
             .as("First booking confirmation should be displayed")
@@ -170,12 +158,6 @@ class FunctionalSeleniumTest {
         bookReservePage.fillDate(bookingDate.toString());
 
         // Wait for time slot to be enabled
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         assertThat(bookReservePage.isTimeSlotEnabled())
             .as("Time slot should be enabled for second booking")
             .isTrue();
@@ -186,12 +168,6 @@ class FunctionalSeleniumTest {
         bookReservePage.submit();
 
         // Wait for booking to be processed
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         String resultIlhavo = bookReservePage.getCheckResultContent();
         assertThat(resultIlhavo)
             .as("Second booking confirmation should be displayed")
@@ -314,12 +290,6 @@ class FunctionalSeleniumTest {
         // Filter by Aveiro municipality
         staffPage.searchByMunicipality("Aveiro");
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         // Verify only Aveiro bookings are shown
         var municipalities = staffPage.getBookingMunicipalities();
         assertThat(municipalities)
@@ -373,12 +343,6 @@ class FunctionalSeleniumTest {
         citizenCheckPage.clickCheck();
 
         // Then - Verify booking details are displayed
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         String result = citizenCheckPage.getCheckResultContent();
         assertThat(result)
             .as("Booking details should be displayed")
@@ -392,30 +356,10 @@ class FunctionalSeleniumTest {
             .contains(ilhavoToken);
 
         // Now cancel the booking
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
         citizenCheckPage.clickCancelBooking();
-
-        // Wait for cancellation popup to appear
-        try {
-            Thread.sleep(800);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
 
         // Confirm the cancellation in the popup
         citizenCheckPage.confirmCancellation();
-
-        // Wait for cancellation to complete
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
 
         // Verify the booking status is now CANCELLED
         String cancelledResult =
