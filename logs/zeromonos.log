@@ -8585,3 +8585,540 @@ org.springframework.web.client.RestClientException: API is down
 2025-11-02 17:09:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-11-02 17:09:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 2025-11-02 17:09:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-11-02 17:10:30 [main] INFO  u.d.t.h.c.MunicipalityControllerTest - Starting MunicipalityControllerTest using Java 21.0.8 with PID 298403 (started by duarte in /home/duarte/doc/Personal/UA/3ºAno/TQS/P/ZeroMonos)
+2025-11-02 17:10:30 [main] INFO  u.d.t.h.c.MunicipalityControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-11-02 17:10:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02 17:10:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-11-02 17:10:31 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02 17:10:31 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-02 17:10:31 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-02 17:10:32 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02 17:10:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-02 17:10:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@476efc81
+2025-11-02 17:10:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-02 17:10:32 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02 17:10:32 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02 17:10:33 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02 17:10:33 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 17:10:33 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-02 17:10:34 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:10:34 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02 17:10:34 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-11-02 17:10:35 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-11-02 17:10:35 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-11-02 17:10:35 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-11-02 17:10:35 [main] INFO  u.d.t.h.c.MunicipalityControllerTest - Started MunicipalityControllerTest in 4.91 seconds (process running for 7.067)
+2025-11-02 17:10:36 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ua.deti.tqs.hw1.controller.BookingControllerTest]: BookingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02 17:10:36 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ua.deti.tqs.hw1.ZeroMonosApplication for test class ua.deti.tqs.hw1.controller.BookingControllerTest
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Deleting booking with ID: 772
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 772 deleted successfully
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:10:36 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Time slot already occupied
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:10:36 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Invalid date
+2025-11-02 17:10:36 [main] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.Object> ua.deti.tqs.hw1.controller.BookingController.create(ua.deti.tqs.hw1.model.Booking): [Field error in object 'booking' on field 'citizenName': rejected value [john]; codes [Pattern.booking.citizenName,Pattern.citizenName,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [booking.citizenName,citizenName]; arguments []; default message [citizenName],[Ljakarta.validation.constraints.Pattern$Flag;@55bc1d9a,^[A-Z][a-z]*+(?>\s[A-Z][a-z]*+)+$]; default message [Name must have at least two words, each starting with uppercase letter, letters only]] ]
+2025-11-02 17:10:36 [main] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.Object> ua.deti.tqs.hw1.controller.BookingController.create(ua.deti.tqs.hw1.model.Booking): [Field error in object 'booking' on field 'description': rejected value [TV]; codes [Size.booking.description,Size.description,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [booking.description,description]; arguments []; default message [description],2147483647,4]; default message [Description must have at least 4 characters]] ]
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 776 status
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 776 status changed
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Time slot is now available (booking 776 cancelled)
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: bff01082
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 780 status
+2025-11-02 17:10:36 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 780 status changed
+2025-11-02 17:10:36 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ua.deti.tqs.hw1.functional.FunctionalSeleniumTest]: FunctionalSeleniumTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02 17:10:36 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ua.deti.tqs.hw1.ZeroMonosApplication for test class ua.deti.tqs.hw1.functional.FunctionalSeleniumTest
+2025-11-02 17:10:36 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-11-02 17:10:36 [main] INFO  u.d.t.h.f.FunctionalSeleniumTest - Starting FunctionalSeleniumTest using Java 21.0.8 with PID 298403 (started by duarte in /home/duarte/doc/Personal/UA/3ºAno/TQS/P/ZeroMonos)
+2025-11-02 17:10:36 [main] INFO  u.d.t.h.f.FunctionalSeleniumTest - No active profile set, falling back to 1 default profile: "default"
+2025-11-02 17:10:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-02 17:10:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interface.
+2025-11-02 17:10:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2025-11-02 17:10:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-02 17:10:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-02 17:10:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-02 17:10:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 382 ms
+2025-11-02 17:10:37 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-02 17:10:37 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-02 17:10:37 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-02 17:10:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-11-02 17:10:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4aaf593d
+2025-11-02 17:10:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-11-02 17:10:37 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-02 17:10:37 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-02 17:10:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-02 17:10:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 17:10:37 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:10:37 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-02 17:10:37 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-11-02 17:10:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 44341 (http) with context path '/'
+2025-11-02 17:10:37 [main] INFO  u.d.t.h.f.FunctionalSeleniumTest - Started FunctionalSeleniumTest in 0.954 seconds (process running for 9.839)
+2025-11-02 17:10:38 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 17:10:38 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 17:10:39 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02 17:10:41 [http-nio-auto-1-exec-7] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:10:41 [http-nio-auto-1-exec-7] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 868aa3a1
+2025-11-02 17:10:42 [http-nio-auto-1-exec-4] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:10:42 [http-nio-auto-1-exec-4] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 6c55fd49
+2025-11-02 17:10:42 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 17:10:42 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 17:10:55 [http-nio-auto-1-exec-1] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 781 status
+2025-11-02 17:10:55 [http-nio-auto-1-exec-1] INFO  u.d.tqs.hw1.service.BookingService - Booking 781 status changed
+2025-11-02 17:10:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 17:10:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 17:10:58 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 17:10:58 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 17:11:00 [http-nio-auto-1-exec-7] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 782 status
+2025-11-02 17:11:00 [http-nio-auto-1-exec-7] INFO  u.d.tqs.hw1.service.BookingService - Booking 782 status changed
+2025-11-02 17:11:00 [http-nio-auto-1-exec-7] INFO  u.d.tqs.hw1.service.BookingService - Time slot is now available (booking 782 cancelled)
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Attempted to delete non-existent booking with ID: 99
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Time slot already occupied
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Invalid date
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Time slot is now available (booking null cancelled)
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Deleting booking with ID: 1
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 deleted successfully
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 99 status
+2025-11-02 17:11:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Attempted to update non-existent booking with ID: 99
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 27ea478d
+2025-11-02 17:11:12 [main] ERROR u.d.t.h.service.MunicipalityService - Failed to load municipalities: API is down
+org.springframework.web.client.RestClientException: API is down
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:709)
+	at ua.deti.tqs.hw1.service.MunicipalityService.getMunicipalities(MunicipalityService.java:26)
+	at ua.deti.tqs.hw1.service.MunicipalityServiceTest.whenApiFails_thenReturnFallbackList(MunicipalityServiceTest.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:775)
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:479)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:161)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:152)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:91)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:112)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:94)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:87)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:216)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:212)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2025-11-02 17:11:12 [main] WARN  u.d.t.h.service.MunicipalityService - API returned null or empty response
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 0 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 0 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 2 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 2 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 3 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 3 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 4 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 4 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 5 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 5 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 6 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 6 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 7 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 7 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 8 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 8 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 9 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 9 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 10 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 10 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 11 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 11 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 12 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 12 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 13 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 13 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 14 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 14 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 15 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 15 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 16 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 16 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 17 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 17 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 18 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 18 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 19 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 19 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 20 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 20 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 21 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 21 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 22 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 22 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 23 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 23 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 24 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 24 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 25 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 25 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 26 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 26 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 27 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 27 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 28 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 28 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 29 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 29 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 30 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 30 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 31 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 31 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 32 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 32 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 33 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 33 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 34 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 34 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 35 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 35 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 36 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 36 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 37 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 37 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 38 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 38 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 39 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 39 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 40 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 40 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 41 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 41 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 42 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 42 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 43 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 43 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 44 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 44 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 45 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 45 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 46 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 46 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 47 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 47 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 48 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 48 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 49 status
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 49 status changed
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking
+2025-11-02 17:11:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 8b2a072c
+2025-11-02 17:11:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 17:11:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-02 17:11:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-02 17:11:12 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02 17:11:12 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-02 17:11:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 17:11:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-11-02 17:11:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
