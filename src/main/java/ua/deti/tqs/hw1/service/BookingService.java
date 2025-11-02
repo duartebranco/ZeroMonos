@@ -110,7 +110,7 @@ public class BookingService {
      * Update booking status.
      */
     public Booking updateStatus(Long id, String status) {
-        logger.info("Updating booking {} status to {}", id, status);
+        logger.info("Updating booking {} status", id);
 
         return repo
             .findById(id)
@@ -119,12 +119,7 @@ public class BookingService {
                 b.setStatus(status);
                 Booking savedBooking = repo.save(b);
 
-                logger.info(
-                    "Booking {} status changed from {} to {}",
-                    id,
-                    oldStatus,
-                    status
-                );
+                logger.info("Booking {} status changed", id);
 
                 // Log availability change when cancelled
                 if (
