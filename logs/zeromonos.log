@@ -25215,3 +25215,371 @@ org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique co
 2025-11-02 14:26:26 [http-nio-auto-1-exec-8] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 65f0bca7 for Maria Silva
 2025-11-02 14:26:32 [http-nio-auto-1-exec-4] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for Maria Silva in Ílhavo on 2025-11-04 at slot 0
 2025-11-02 14:26:32 [http-nio-auto-1-exec-4] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 144f8397 for Maria Silva
+2025-11-02 14:26:35 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 14:26:35 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 14:26:48 [http-nio-auto-1-exec-2] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 106 status to ASSIGNED
+2025-11-02 14:26:48 [http-nio-auto-1-exec-2] INFO  u.d.tqs.hw1.service.BookingService - Booking 106 status changed from RECEIVED to ASSIGNED for citizen Maria Silva
+2025-11-02 14:26:50 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 14:26:50 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 14:26:54 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.36.0 (resolved driver for Firefox 144)
+2025-11-02 14:26:54 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/duarte/.cache/selenium/geckodriver/linux64/0.36.0/geckodriver
+2025-11-02 14:26:59 [http-nio-auto-1-exec-9] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 107 status to CANCELLED
+2025-11-02 14:26:59 [http-nio-auto-1-exec-9] INFO  u.d.tqs.hw1.service.BookingService - Booking 107 status changed from RECEIVED to CANCELLED for citizen Maria Silva
+2025-11-02 14:26:59 [http-nio-auto-1-exec-9] INFO  u.d.tqs.hw1.service.BookingService - Time slot 09:00 on 2025-11-04 for Ílhavo is now available (booking 107 cancelled)
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Attempted to delete non-existent booking with ID: 99
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed from RECEIVED to IN_PROGRESS for citizen John Doe
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Time slot 2 on 2025-11-03 already occupied in Aveiro
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-01 at slot 2
+2025-11-02 14:27:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Booking creation failed: Invalid date 2025-11-01 for John Doe
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status to CANCELLED
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed from RECEIVED to CANCELLED for citizen John Doe
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Time slot 11:00 on 2025-11-03 for Aveiro is now available (booking null cancelled)
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Deleting booking with ID: 1
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 deleted successfully
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 99 status to COMPLETED
+2025-11-02 14:27:12 [main] WARN  u.d.tqs.hw1.service.BookingService - Attempted to update non-existent booking with ID: 99
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: 2ca59855 for John Doe
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 0 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 0 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 1 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 1 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 2 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 2 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 3 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 3 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 4 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 4 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 5 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 5 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 6 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 6 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 7 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 7 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 8 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 8 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 9 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 9 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 10 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 10 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 11 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 11 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 12 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 12 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 13 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 13 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 14 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 14 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 15 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 15 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 16 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 16 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 17 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 17 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 18 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 18 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 19 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 19 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 20 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 20 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 21 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 21 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 22 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 22 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 23 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 23 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 24 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 24 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 25 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 25 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 26 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 26 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 27 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 27 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 28 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 28 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 29 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 29 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 30 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 30 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 31 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 31 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 32 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 32 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 33 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 33 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 34 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 34 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 35 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 35 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 36 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 36 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 37 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 37 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 38 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 38 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 39 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 39 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 40 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 40 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 41 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 41 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 42 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 42 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 43 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 43 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 44 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 44 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 45 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 45 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 46 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 46 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 47 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 47 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 48 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 48 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Updating booking 49 status to IN_PROGRESS
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking 49 status changed from RECEIVED to IN_PROGRESS for citizen Test Person
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:12 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - BookingService initialized
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 1
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 2
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 3
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 4
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 5
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 6
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 7
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 8
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Creating new booking for John Doe in Aveiro on 2025-11-03 at slot 0
+2025-11-02 14:27:13 [main] INFO  u.d.tqs.hw1.service.BookingService - Booking created successfully with token: c034279a for John Doe
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02 14:27:13 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-11-02 14:27:13 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
