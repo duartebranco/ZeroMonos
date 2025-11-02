@@ -85,10 +85,11 @@ public class DebugController {
             .stream()
             .collect(
                 java.util.stream.Collectors.groupingBy(
-                    booking -> booking.getStatus(),
+                    Booking::getStatus,
                     java.util.stream.Collectors.counting()
                 )
             );
+</parameter>
         stats.put("bookingsByStatus", statusCounts);
 
         // Municipality popularity
@@ -96,7 +97,7 @@ public class DebugController {
             .stream()
             .collect(
                 java.util.stream.Collectors.groupingBy(
-                    booking -> booking.getMunicipality(),
+                    Booking::getMunicipality,
                     java.util.stream.Collectors.counting()
                 )
             );
