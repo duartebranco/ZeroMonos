@@ -57,7 +57,7 @@ class FunctionalSeleniumTest {
 
         // Configure Firefox options
         FirefoxOptions options = new FirefoxOptions();
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
 
         driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
