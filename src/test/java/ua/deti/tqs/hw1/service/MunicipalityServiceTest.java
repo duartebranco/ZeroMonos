@@ -64,8 +64,9 @@ class MunicipalityServiceTest {
         List<String> result = service.getMunicipalities();
 
         // Assert
-        assertThat(result).isNotNull();
-        assertThat(result).containsExactly("Aveiro", "Porto", "Lisboa");
+        assertThat(result)
+            .isNotNull()
+            .containsExactly("Aveiro", "Porto", "Lisboa");
     }
 
     // test fallback
@@ -85,8 +86,9 @@ class MunicipalityServiceTest {
         List<String> result = service.getMunicipalities();
 
         // Assert
-        assertThat(result).isNotNull();
-        assertThat(result).containsExactly("Aveiro", "Lisboa", "Porto");
+        assertThat(result)
+            .isNotNull()
+            .containsExactly("Aveiro", "Lisboa", "Porto");
     }
 
     // test empty response handling

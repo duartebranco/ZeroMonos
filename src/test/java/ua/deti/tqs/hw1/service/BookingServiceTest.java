@@ -416,9 +416,9 @@ class BookingServiceTest {
     @Test
     void whenFormatInvalidTimeSlots_thenReturnEmptyString() {
         // Act & Assert
-        assertThat(service.formatTimeSlot(-1)).isEqualTo("");
-        assertThat(service.formatTimeSlot(9)).isEqualTo("");
-        assertThat(service.formatTimeSlot(null)).isEqualTo("");
+        assertThat(service.formatTimeSlot(-1)).isEmpty();
+        assertThat(service.formatTimeSlot(9)).isEmpty();
+        assertThat(service.formatTimeSlot(null)).isEmpty();
     }
 
     // === GET ALL BOOKINGS TEST ===
