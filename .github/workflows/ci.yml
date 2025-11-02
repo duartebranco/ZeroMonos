@@ -55,7 +55,6 @@ jobs:
                     -Dsonar.organization=duartebranco \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
-                    -Dsonar.sources=src/main/java,src/main/resources \
                     -Dspring.datasource.url=jdbc:postgresql://localhost:5432/zeromonosdb \
                     -Dspring.datasource.username=postgres \
                     -Dspring.datasource.password=postgres
