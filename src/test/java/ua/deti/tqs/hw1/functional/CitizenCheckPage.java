@@ -102,4 +102,42 @@ public class CitizenCheckPage {
             button.click();
         }
     }
+
+    public void confirmCancellation() {
+        try {
+            // Find the confirm button in the overlay/dialog
+            // The confirmation dialog creates buttons with class "btn"
+            // We need to find the one that says "Confirm"
+            wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(
+                    By.xpath("//button[contains(text(), 'Confirm')]")
+                )
+            );
+            WebElement confirmBtn = driver.findElement(
+                By.xpath("//button[contains(text(), 'Confirm')]")
+            );
+            confirmBtn.click();
+        } catch (Exception e) {
+            throw new RuntimeException(
+                "Could not find or click confirm button: " + e.getMessage()
+            );
+        }
+    }
+
+    public String getCheckResultContentAfterCancel() {
+        try {
+            // Wait for the result to be updated with the cancelled status
+            WebElement result = wait.until(
+                ExpectedConditions.presenceOfElementLocated(checkResultPre)
+            );
+            String content = result.getText();
+            // Wait until the content contains CANCELLED status
+            wait.until(
+                ExpectedConditions.textToBePresentInElement(result, "CANCELLED")
+            );
+            return content;
+        } catch (Exception e) {
+            return "";
+        }
+    }
 }

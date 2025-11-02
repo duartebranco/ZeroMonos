@@ -57,7 +57,7 @@ class FunctionalSeleniumTest {
 
         // Configure Firefox options
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");
+        // options.addArguments("--headless");
 
         driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -389,6 +389,16 @@ class FunctionalSeleniumTest {
 
         citizenCheckPage.clickCancelBooking();
 
+        // Wait for cancellation popup to appear
+        try {
+            Thread.sleep(800);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Confirm the cancellation in the popup
+        citizenCheckPage.confirmCancellation();
+
         // Wait for cancellation to complete
         try {
             Thread.sleep(1500);
@@ -396,19 +406,18 @@ class FunctionalSeleniumTest {
             Thread.currentThread().interrupt();
         }
 
-        // Verify cancellation was attempted (result contains booking details)
-        String resultAfterCancel = citizenCheckPage.getCheckResultContent();
-        assertThat(resultAfterCancel)
-            .as("Result should be present after cancellation attempt")
-            .isNotNull()
-            .isNotEmpty();
+        // Verify the booking status is now CANCELLED
+        String cancelledResult =
+            citizenCheckPage.getCheckResultContentAfterCancel();
+        assertThat(cancelledResult)
+            .as(
+                "Booking result should show CANCELLED status after confirmation"
+            )
+            .contains("CANCELLED");
 
-        // Verify the booking details are still visible (booking was found before cancellation)
-        assertThat(result)
-            .as("Initial booking check should contain the token")
-            .contains(ilhavoToken);
-
-        // Verify cancellation was clicked without errors
-        // (The cancellation process completed without throwing exceptions)
+        // Verify the cancel button is hidden after cancellation
+        assertThat(citizenCheckPage.isCancelButtonVisible())
+            .as("Cancel button should be hidden after successful cancellation")
+            .isFalse();
     }
 }
