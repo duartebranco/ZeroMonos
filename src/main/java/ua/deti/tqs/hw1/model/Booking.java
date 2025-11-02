@@ -50,7 +50,7 @@ public class Booking {
 
     @NotBlank
     @Pattern(
-        regexp = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)+$",
+        regexp = "^[A-Z][a-z]*+(?>\\s[A-Z][a-z]*+)+$",
         message = "Name must have at least two words, each starting with uppercase letter, letters only"
     )
     private String citizenName;
