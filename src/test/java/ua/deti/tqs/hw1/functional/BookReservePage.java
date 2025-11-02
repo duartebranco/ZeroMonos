@@ -78,11 +78,8 @@ public class BookReservePage {
         dateField.clear();
         dateField.sendKeys(date);
         triggerChangeEvent(dateField);
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        // Wait for time slot options to be populated after date selection
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("timeSlot")));
     }
 
     public void selectTimeSlot(int index) {
@@ -174,7 +171,6 @@ public class BookReservePage {
             }
 
             // Parse the JSON response to extract token
-            // Expected format: {"id": ..., "token": "ABC123", ...}
             int tokenIndex = resultText.indexOf("\"token\"");
             if (tokenIndex == -1) {
                 return "";

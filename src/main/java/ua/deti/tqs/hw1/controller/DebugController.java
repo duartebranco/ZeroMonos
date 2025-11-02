@@ -89,7 +89,6 @@ public class DebugController {
                     java.util.stream.Collectors.counting()
                 )
             );
-</parameter>
         stats.put("bookingsByStatus", statusCounts);
 
         // Municipality popularity
