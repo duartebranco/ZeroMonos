@@ -348,10 +348,7 @@ class FunctionalSeleniumTest {
             .as("Booking details should be displayed")
             .isNotEmpty()
             .doesNotContain("not found")
-            .doesNotContain("not exist");
-
-        // Verify the result contains the booking token
-        assertThat(result)
+            .doesNotContain("not exist")
             .as("Booking result should contain the token we searched for")
             .contains(ilhavoToken);
 
