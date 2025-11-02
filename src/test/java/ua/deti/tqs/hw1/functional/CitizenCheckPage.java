@@ -20,6 +20,7 @@ public class CitizenCheckPage {
     private final By checkButton = By.id("checkBtn");
     private final By checkResultPre = By.id("checkResult");
     private final By cancelButtonContainer = By.id("cancelButtonContainer");
+    private final By cancelBookingButton = By.id("cancelBookingBtn");
 
     public CitizenCheckPage(WebDriver driver) {
         this.driver = driver;
@@ -85,6 +86,20 @@ public class CitizenCheckPage {
 
     public String getTokenInputValue() {
         WebElement token = driver.findElement(tokenInput);
-        return token.getAttribute("value");
+        return token.getDomProperty("value");
+    }
+
+    public void clickCancelBooking() {
+        try {
+            WebElement cancelBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(cancelBookingButton)
+            );
+            cancelBtn.click();
+        } catch (Exception e) {
+            // If cancel button not found, try clicking through the container
+            WebElement container = driver.findElement(cancelButtonContainer);
+            WebElement button = container.findElement(By.tagName("button"));
+            button.click();
+        }
     }
 }

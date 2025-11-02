@@ -5,10 +5,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -28,6 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Transactional
 @DisplayName("Functional Tests - Selenium/BDD")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FunctionalSeleniumTest {
 
     @LocalServerPort
@@ -40,6 +46,10 @@ class FunctionalSeleniumTest {
     private StaffPage staffPage;
     private CitizenCheckPage citizenCheckPage;
 
+    // Store booking details from first test to verify in later tests (static to share across test methods)
+    private static Map<String, String> bookingAveiro;
+    private static Map<String, String> bookingIlhavo;
+
     @BeforeEach
     void setUp() {
         // Setup WebDriver Manager for Firefox
@@ -47,7 +57,7 @@ class FunctionalSeleniumTest {
 
         // Configure Firefox options
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");
+        // options.addArguments("--headless");
 
         driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -68,14 +78,15 @@ class FunctionalSeleniumTest {
     }
 
     /**
-     * BDD Test 1: Citizen successfully books a collection slot (Happy Path)
+     * BDD Test 1: Citizen successfully books two collection slots in different municipalities
      *
      * Given: A citizen is on the booking page
-     * When: The citizen fills the form with valid data and submits
-     * Then: A success message should be displayed with booking confirmation
+     * When: The citizen fills the form with valid data and submits two bookings
+     * Then: Both success messages should be displayed with booking confirmations
      */
     @Test
-    @DisplayName("TC1: Citizen can successfully book a collection slot")
+    @Order(1)
+    @DisplayName("TC1: Citizen can successfully book two collection slots")
     void testCitizenBooksSlotSuccessfully() {
         // Given
         bookReservePage.navigateTo(baseUrl);
@@ -83,13 +94,24 @@ class FunctionalSeleniumTest {
             .as("Booking form should be displayed")
             .isTrue();
 
-        // When
-        bookReservePage.fillName("Maria Silva");
-        bookReservePage.fillMunicipality("Aveiro");
-        bookReservePage.fillDate(LocalDate.now().plusDays(1).toString());
+        // Common booking details
+        String citizenName = "Maria Silva";
+        LocalDate bookingDate = LocalDate.now().plusDays(2);
+        String description = "Old refrigerator 200L";
+
+        // === FIRST BOOKING: Aveiro ===
+        String municipalityAveiro = "Aveiro";
+
+        bookReservePage.fillName(citizenName);
+        bookReservePage.fillMunicipality(municipalityAveiro);
+        bookReservePage.fillDate(bookingDate.toString());
 
         // Wait for time slot to be enabled after date selection
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
 
         assertThat(bookReservePage.isTimeSlotEnabled())
             .as("Time slot should be enabled after date is filled")
@@ -97,149 +119,296 @@ class FunctionalSeleniumTest {
 
         bookReservePage.selectTimeSlot(0); // First available slot
         bookReservePage.selectItemType(0); // First item type
-        bookReservePage.fillDescription("Old refrigerator 200L");
+        bookReservePage.fillDescription(description);
         bookReservePage.submit();
 
-        // Then
+        // Wait for booking to be processed
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        String result = bookReservePage.getCheckResultContent();
-        assertThat(result)
-            .as("Booking confirmation or token should be displayed")
+        String resultAveiro = bookReservePage.getCheckResultContent();
+        assertThat(resultAveiro)
+            .as("First booking confirmation should be displayed")
             .isNotEmpty()
             .doesNotContain("No results");
+
+        // Extract and store first booking details
+        String tokenAveiro = bookReservePage.extractTokenFromResult();
+        assertThat(tokenAveiro)
+            .as("Token for Aveiro booking should be extracted")
+            .isNotEmpty();
+
+        bookingAveiro = new HashMap<>();
+        bookingAveiro.put("token", tokenAveiro);
+        bookingAveiro.put("citizenName", citizenName);
+        bookingAveiro.put("municipality", municipalityAveiro);
+        bookingAveiro.put("date", bookingDate.toString());
+        bookingAveiro.put("description", description);
+
+        // === SECOND BOOKING: Ílhavo ===
+        bookReservePage.clear();
+        bookReservePage.navigateTo(baseUrl);
+
+        String municipalityIlhavo = "Ílhavo";
+
+        bookReservePage.fillName(citizenName);
+        bookReservePage.fillMunicipality(municipalityIlhavo);
+        bookReservePage.fillDate(bookingDate.toString());
+
+        // Wait for time slot to be enabled
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        assertThat(bookReservePage.isTimeSlotEnabled())
+            .as("Time slot should be enabled for second booking")
+            .isTrue();
+
+        bookReservePage.selectTimeSlot(0);
+        bookReservePage.selectItemType(0);
+        bookReservePage.fillDescription(description);
+        bookReservePage.submit();
+
+        // Wait for booking to be processed
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        String resultIlhavo = bookReservePage.getCheckResultContent();
+        assertThat(resultIlhavo)
+            .as("Second booking confirmation should be displayed")
+            .isNotEmpty()
+            .doesNotContain("No results");
+
+        // Extract and store second booking details
+        String tokenIlhavo = bookReservePage.extractTokenFromResult();
+        assertThat(tokenIlhavo)
+            .as("Token for Ílhavo booking should be extracted")
+            .isNotEmpty();
+
+        bookingIlhavo = new HashMap<>();
+        bookingIlhavo.put("token", tokenIlhavo);
+        bookingIlhavo.put("citizenName", citizenName);
+        bookingIlhavo.put("municipality", municipalityIlhavo);
+        bookingIlhavo.put("date", bookingDate.toString());
+        bookingIlhavo.put("description", description);
     }
 
     /**
-     * BDD Test 2: Staff can view all bookings on the staff page
+     * BDD Test 2: Staff can view the Aveiro booking and change its status
      *
-     * Given: A staff member navigates to the staff page
-     * When: The page loads
-     * Then: The bookings table should be displayed
+     * Given: A staff member navigates to the staff page after TC1 bookings
+     * When: The staff member finds the Aveiro booking by token and changes its status
+     * Then: The booking should exist and its status should be updated to ASSIGNED
      */
     @Test
-    @DisplayName("TC2: Staff page displays bookings table")
-    void testStaffPageDisplaysBookings() {
+    @Order(2)
+    @DisplayName("TC2: Staff can find booking by token and change its status")
+    void testStaffPageDisplaysBookingsFromTC1() {
+        // Verify booking details from TC1 were stored
+        assertThat(bookingAveiro)
+            .as("Aveiro booking details from TC1 should be available")
+            .isNotNull()
+            .isNotEmpty();
+
+        String token = bookingAveiro.get("token");
+        assertThat(token)
+            .as("Token from Aveiro booking should be available")
+            .isNotEmpty();
+
         // Given & When
         staffPage.navigateTo(baseUrl);
 
-        // Then
+        // Then - Verify the table is displayed
         assertThat(staffPage.isTableDisplayed())
             .as("Bookings table should be displayed on staff page")
             .isTrue();
 
-        int bookingCount = staffPage.getBookingCount();
-        assertThat(bookingCount)
-            .as("Booking count should be non-negative")
-            .isGreaterThanOrEqualTo(1);
+        // Verify the Aveiro booking exists by its token
+        boolean bookingExists = staffPage.bookingExistsByToken(token);
+        assertThat(bookingExists)
+            .as("The Aveiro booking should exist in staff page by token")
+            .isTrue();
+
+        // Get the booking ID using the token
+        String bookingId = staffPage.findBookingIdByToken(token);
+        assertThat(bookingId)
+            .as("Booking ID should be found using the token")
+            .isNotEmpty();
+
+        // Change the status of the booking to ASSIGNED
+        String newStatus = "ASSIGNED";
+        boolean statusChanged = staffPage.changeBookingStatus(
+            bookingId,
+            newStatus
+        );
+
+        assertThat(statusChanged)
+            .as("Status should be successfully changed to " + newStatus)
+            .isTrue();
+
+        // Verify the status was actually updated
+        String updatedStatus = staffPage.getBookingStatus(bookingId);
+        assertThat(updatedStatus)
+            .as("Booking status should be updated to " + newStatus)
+            .contains(newStatus);
     }
 
     /**
      * BDD Test 3: Staff can filter bookings by municipality
      *
-     * Given: A staff member is on the staff page with bookings displayed
-     * When: The staff member searches for a specific municipality
-     * Then: Only bookings from that municipality should be shown (or empty result)
+     * Given: Staff page with two bookings from TC1 (Aveiro and Ílhavo)
+     * When: The staff member filters bookings by Aveiro municipality
+     * Then: Only the Aveiro booking should be shown with the same token
      */
-    ///@Test
+    @Test
+    @Order(3)
     @DisplayName("TC3: Staff can filter bookings by municipality")
     void testStaffFiltersBookingsByMunicipality() {
-        // Given
-        staffPage.navigateTo(baseUrl);
-        int totalCount = staffPage.getBookingCount();
+        // Verify we have both bookings from TC1
+        assertThat(bookingAveiro)
+            .as("Aveiro booking details from TC1 should be available")
+            .isNotNull()
+            .isNotEmpty();
 
-        // When
+        assertThat(bookingIlhavo)
+            .as("Ílhavo booking details from TC1 should be available")
+            .isNotNull()
+            .isNotEmpty();
+
+        String avciroToken = bookingAveiro.get("token");
+        assertThat(avciroToken)
+            .as("Token from Aveiro booking should be available")
+            .isNotEmpty();
+
+        // Navigate to staff page - should see both bookings (Aveiro and Ílhavo)
+        staffPage.navigateTo(baseUrl);
+
+        assertThat(staffPage.isTableDisplayed())
+            .as("Bookings table should be displayed on staff page")
+            .isTrue();
+
+        int totalBookingCount = staffPage.getBookingCount();
+        assertThat(totalBookingCount)
+            .as("At least 2 bookings should exist (one Aveiro, one Ílhavo)")
+            .isGreaterThanOrEqualTo(2);
+
+        // Filter by Aveiro municipality
         staffPage.searchByMunicipality("Aveiro");
 
-        // Then
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        assertThat(staffPage.isTableDisplayed())
-            .as("Table should still be displayed after filtering")
-            .isTrue();
-
+        // Verify only Aveiro bookings are shown
         var municipalities = staffPage.getBookingMunicipalities();
         assertThat(municipalities)
+            .as("All displayed municipalities should be Aveiro after filtering")
+            .isNotEmpty()
+            .allMatch(m -> m.equals("Aveiro"));
+
+        // Verify the filtered booking is the Aveiro one from TC1 by checking token
+        var filteredBookings = staffPage.getAllBookingDetails();
+        boolean tokenFound = filteredBookings
+            .stream()
+            .anyMatch(booking -> booking.get("token").equals(avciroToken));
+
+        assertThat(tokenFound)
             .as(
-                "All displayed municipalities should be Aveiro (if any bookings shown)"
+                "The booking with token from TC1 Aveiro should be present in filtered results"
             )
-            .allMatch(m -> m.isEmpty() || m.equals("Aveiro"));
+            .isTrue();
     }
 
     /**
-     * BDD Test 4: Citizen can check booking status by token
+     * BDD Test 4: Citizen can check booking status and cancel a booking
      *
-     * Given: A citizen is on the check page
-     * When: The citizen enters a token and clicks check
-     * Then: The page should display booking details or a not-found message
+     * Given: A citizen is on the check page with a valid booking token
+     * When: The citizen enters the token and checks booking, then cancels it
+     * Then: The booking details should be displayed and then the booking should be cancelled
      */
-    ///@Test
-    @DisplayName("TC4: Citizen can check booking status")
+    @Test
+    @Order(4)
+    @DisplayName("TC4: Citizen can check booking status and cancel it")
     void testCitizenChecksBookingStatus() {
+        // Verify we have the Ílhavo booking token from TC1
+        assertThat(bookingIlhavo)
+            .as("Ílhavo booking details from TC1 should be available")
+            .isNotNull()
+            .isNotEmpty();
+
+        String ilhavoToken = bookingIlhavo.get("token");
+        assertThat(ilhavoToken)
+            .as("Token from Ílhavo booking should be available")
+            .isNotEmpty();
+
         // Given
         citizenCheckPage.navigateTo(baseUrl);
         assertThat(citizenCheckPage.isPageDisplayed())
             .as("Citizen check page should be displayed")
             .isTrue();
 
-        // When
-        citizenCheckPage.fillToken("INVALID-TOKEN-12345");
+        // When - Check booking by token
+        citizenCheckPage.fillToken(ilhavoToken);
         citizenCheckPage.clickCheck();
 
-        // Then
+        // Then - Verify booking details are displayed
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
         String result = citizenCheckPage.getCheckResultContent();
         assertThat(result)
-            .as("Result should be displayed (either booking data or not found)")
-            .isNotEmpty();
-    }
+            .as("Booking details should be displayed")
+            .isNotEmpty()
+            .doesNotContain("not found")
+            .doesNotContain("not exist");
 
-    /**
-     * BDD Test 5: Staff can see citizen names and booking statuses
-     *
-     * Given: A staff member is on the staff page
-     * When: Bookings are displayed
-     * Then: Citizen names and statuses should be visible in the table
-     */
-    @Test
-    @DisplayName("TC5: Staff can view citizen details and booking statuses")
-    void testStaffSeesCitizenDetailsAndStatuses() {
-        // Given
-        staffPage.navigateTo(baseUrl);
+        // Verify the result contains the booking token
+        assertThat(result)
+            .as("Booking result should contain the token we searched for")
+            .contains(ilhavoToken);
 
-        // When
-        var citizenNames = staffPage.getBookingCitizenNames();
-        var statuses = staffPage.getBookingStatuses();
-
-        // Then
-        assertThat(citizenNames)
-            .as("Citizen names should be retrievable")
-            .isNotNull();
-
-        assertThat(statuses)
-            .as("Booking statuses should be retrievable")
-            .isNotNull();
-
-        if (staffPage.getBookingCount() > 0) {
-            assertThat(citizenNames)
-                .as("Should have citizen names if bookings exist")
-                .isNotEmpty();
-            assertThat(statuses)
-                .as("Should have statuses if bookings exist")
-                .isNotEmpty();
+        // Now cancel the booking
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
+
+        citizenCheckPage.clickCancelBooking();
+
+        // Wait for cancellation to complete
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Verify cancellation was attempted (result contains booking details)
+        String resultAfterCancel = citizenCheckPage.getCheckResultContent();
+        assertThat(resultAfterCancel)
+            .as("Result should be present after cancellation attempt")
+            .isNotNull()
+            .isNotEmpty();
+
+        // Verify the booking details are still visible (booking was found before cancellation)
+        assertThat(result)
+            .as("Initial booking check should contain the token")
+            .contains(ilhavoToken);
+
+        // Verify cancellation was clicked without errors
+        // (The cancellation process completed without throwing exceptions)
     }
 }

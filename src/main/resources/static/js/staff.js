@@ -6,29 +6,63 @@
     const refreshBtn = document.getElementById("refreshBtn");
     const table = document.getElementById("bookingsTable");
     const tbody = table.querySelector("tbody");
+    const municipalityList = document.getElementById("municipalitySearchList");
 
-    // Client-side filtering by municipality (simple, works on currently rendered rows)
+    // Fetch and populate municipalities for autocomplete
+    async function populateMunicipalities() {
+        try {
+            const res = await fetch(apiBase + "/municipalities");
+            if (!res.ok) {
+                console.error("Failed to fetch municipalities");
+                return;
+            }
+            const municipalities = await res.json();
+
+            // Clear existing options
+            municipalityList.innerHTML = "";
+
+            // Add municipalities to datalist
+            municipalities.forEach((municipality) => {
+                const option = document.createElement("option");
+                option.value = municipality;
+                municipalityList.appendChild(option);
+            });
+        } catch (err) {
+            console.error("Error fetching municipalities:", err);
+        }
+    }
+
+    // Initialize municipalities on page load
+    populateMunicipalities();
+
+    // Search by municipality: filter table rows
     searchBtn.addEventListener("click", function () {
         const q = searchInput.value.trim().toLowerCase();
-        if (!q) {
-            // show all rows
-            tbody.querySelectorAll("tr[th\\:each]").forEach(() => {}); // no-op: template marker not present at runtime
-        }
+
         Array.from(tbody.querySelectorAll("tr")).forEach((row) => {
-            // skip placeholder row (no th:each at runtime) by checking number of cells
             const cells = row.querySelectorAll("td");
-            if (cells.length < 2) return;
-            const municipalityCell = cells[2];
+            if (cells.length < 4) return; // Skip rows with insufficient columns
+
+            const municipalityCell = cells[3]; // Municipality is the 4th column
             const municipality = (
                 (municipalityCell && municipalityCell.textContent) ||
                 ""
             ).toLowerCase();
-            if (!q || municipality.includes(q)) {
+
+            // Show row if search is empty or municipality matches exactly
+            if (!q || municipality === q) {
                 row.style.display = "";
             } else {
                 row.style.display = "none";
             }
         });
+    });
+
+    // Allow Enter key to trigger search
+    searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            searchBtn.click();
+        }
     });
 
     // Reload page data from server (full refresh)

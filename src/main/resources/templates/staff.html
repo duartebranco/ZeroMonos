@@ -23,7 +23,9 @@
                             <input
                                 id="searchMunicipality"
                                 type="search"
+                                list="municipalitySearchList"
                                 placeholder="Search by municipality..."
+                                autocomplete="off"
                                 style="
                                     flex: 1;
                                     margin-bottom: 0;
@@ -32,6 +34,9 @@
                                     border: 1px solid #e6eefc;
                                 "
                             />
+                            <datalist id="municipalitySearchList">
+                                <!-- Populated by staff.js -->
+                            </datalist>
                             <button
                                 id="searchBtn"
                                 class="btn secondary"

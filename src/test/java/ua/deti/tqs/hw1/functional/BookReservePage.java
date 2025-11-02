@@ -161,4 +161,39 @@ public class BookReservePage {
             )
             .isDisplayed();
     }
+
+    /**
+     * Extract the token from the booking confirmation JSON response
+     * @return the booking token or empty string if not found
+     */
+    public String extractTokenFromResult() {
+        try {
+            String resultText = getCheckResultContent();
+            if (resultText == null || resultText.isEmpty()) {
+                return "";
+            }
+
+            // Parse the JSON response to extract token
+            // Expected format: {"id": ..., "token": "ABC123", ...}
+            int tokenIndex = resultText.indexOf("\"token\"");
+            if (tokenIndex == -1) {
+                return "";
+            }
+
+            // Find the value after "token": "
+            int startIndex = resultText.indexOf("\"", tokenIndex + 8);
+            if (startIndex == -1) {
+                return "";
+            }
+
+            int endIndex = resultText.indexOf("\"", startIndex + 1);
+            if (endIndex == -1) {
+                return "";
+            }
+
+            return resultText.substring(startIndex + 1, endIndex);
+        } catch (Exception e) {
+            return "";
+        }
+    }
 }
