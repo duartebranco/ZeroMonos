@@ -29,7 +29,9 @@ export function setup() {
 }
 
 function getFutureBookingDate(daysOffset) {
-    const date = new Date("2025-11-03");
+    // Use today's date as the base (dynamically calculated)
+    const today = new Date();
+    const date = new Date(today);
     date.setDate(date.getDate() + daysOffset);
     return date.toISOString().split("T")[0];
 }
@@ -47,9 +49,10 @@ export default function (data) {
                 data.municipalities[
                     Math.floor(Math.random() * data.municipalities.length)
                 ];
-            const bookingDate = getFutureBookingDate(
-                Math.floor(Math.random() * 10) + 7,
-            );
+            // Generate dates from today + 1 day onwards (avoid past dates)
+            // Use different dates for each iteration to avoid unique constraint violations
+            const daysOffset = Math.floor(Math.random() * 30) + 1;
+            const bookingDate = getFutureBookingDate(daysOffset);
             const firstNames = ["John", "Maria", "Pedro", "Ana", "Carlos"];
             const lastNames = [
                 "Silva",
