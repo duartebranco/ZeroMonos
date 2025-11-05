@@ -32,5 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
-### docs/ for now ###
-docs/
+## LaTeX ##
+*.aux
+*.out
+*.idx
+*.log
+*.toc
