@@ -43,7 +43,7 @@ All core function requirements from the assignment were implemented:
 
 In addition to the required functionalities, the project integrates a \texttt{Continuous Integration (CI)} pipeline using GitHub Actions. It's set up to build and test the project on each push/merge request, and it includes \texttt{SonarQube} Quality Gate enforcement via \texttt{SonarQube Cloud}.
 
-Yet, the current implementation has some constraints and missing features such as: mobile responsiveness and authentication/login system.
+Yet, the current implementation has some constraints and missing features, such as mobile responsiveness and an authentication/login system.
 
 \chapter{Product specification}
 \section{Functional scope and supported interactions}
@@ -60,15 +60,15 @@ Each actor interacts with the system in different ways.
 The citizen has these main interactions:
 
 \begin{itemize}
-    \item \textbf{Create a Booking}: The citizen fills out a form with their name, selects their municipality from a list and describes the items to be collected (type and description). Upon submission, the system records the booking in the database and generates a unique token which is displayed to the user. This token acts as a key for later tracking.
-    \item \textbf{Check Booking}: Using the token received, the citizen can navigate to a status page and input the token to retrieve the current status of their request, optionally, the user can also cancel the booking.
+    \item \textbf{Create a Booking}: The citizen fills out a form with their name, selects their municipality from a list and describes the items to be collected (type and description). Upon submission, the system records the booking in the database and generates a unique token, which is displayed to the user. This token acts as a key for later tracking.
+    \item \textbf{Check Booking}: Using the token received, the citizen can navigate to a status page and input the token to retrieve the current status of their request. Optionally, the user can also cancel the booking.
 \end{itemize}
 
 The staff has these main interactions:
 
 \begin{itemize}
-    \item \textbf{Manage bookings}: The staff can view and edit the bookings created by the users. He has the ability to change the initial state of each booking (RECEIVED) to any of these: ASSIGNED (when someone has been assigned to take care of that booking), IN\_PROGRESS (when the booking is being taken care right now) and COMPLETED. Also, the booking can also be completely removed.
-    \item \textbf{Filter by Municipality}: The staff can also filter the bookings list by municipality name. This is useful if the system is full of bookings from everywhere, so the managing process is easier. The interface provides a search input where staff type the municipality (e.g. "Aveiro") and the list updates to show only matching bookings.
+    \item \textbf{Manage bookings}: The staff can view and edit the bookings created by the users. He has the ability to change the initial state of each booking (RECEIVED) to any of these: ASSIGNED (when someone has been assigned to take care of that booking), IN\_PROGRESS (when the booking is being taken care of right now) and COMPLETED. Also, the booking can be completely removed.
+    \item \textbf{Filter by Municipality}: The staff can also filter the bookings list by municipality name. This is useful if the system is full of bookings from everywhere, making the managing process easier. The interface provides a search input where staff can type the municipality (e.g. "Aveiro") and the list updates to show only matching bookings.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -82,7 +82,7 @@ The staff has these main interactions:
 \texttt{ZeroMonos} follows a standard Spring Boot web application architecture with a layered structure:
 
 \begin{itemize}
-    \item \textbf{Back-End}: The core is a Spring Boot application (Java) that exposes both \texttt{RESTful} endpoints and serves web pages. It uses a service/business layer to implement business logic (for example generating tokens, handling status changes, etc.) and a repository/persistence layer to interact with the database. Data is stored in a \texttt{PostgreSQL} database. The main data entity is the \texttt{Booking.java} with fields for ID, token, citizen name, municipality, description, status, etc.
+    \item \textbf{Back-End}: The core is a Spring Boot application (Java) that exposes both \texttt{RESTful} endpoints and serves web pages. It uses a service/business layer to implement business logic (for example generating tokens, handling status changes, etc.) and a repository/persistence layer to interact with the database. Data is stored in a \texttt{PostgreSQL} database. The main data entity is the \texttt{Booking.java} which has fields for ID, token, citizen name, municipality, description, status, etc.
     \item \textbf{Front-End}: The web front-end is built using \texttt{Thymeleaf} templates, which are served by Spring Boot controllers. The base structure and navigation are defined in \texttt{layout.html}, which provides common fragments for the header, footer, and scripts in all other pages (\texttt{index.html}, \texttt{citizen-reserve.html}, \texttt{citizen-check.html} and \texttt{staff.html}). Styling is handled by \texttt{style.css}, which defines a clean and responsive visual design. Interactivity is implemented through three JavaScript modules: \texttt{layout.js} (manages shared UI behavior), \texttt{citizen.js} (handles all requests to the API needed for the citizen-facing pages) and \texttt{staff.js} (handles API interactions for the staff-facing page).
 \end{itemize}
 
@@ -102,18 +102,18 @@ The app also integrates with an external API for Portuguese municipalities. The 
 \begin{itemize}
 	% citizen
     \item \textbf{POST /bookings} - Create a new booking request. The request body should contain the necessary booking details.
-    \item \textbf{GET /bookings/\{token\}} - Retrieve an existing booking by its public token. This is intended for check page to fetch the current details and status of their request.
+    \item \textbf{GET /bookings/\{token\}} - Retrieve an existing booking by its public token. This is intended for the check page to fetch the current details and status of their request.
 
 	% staff
     \item \textbf{GET /bookings} - Retrieve all bookings in the system. This returns a list of all Booking records (intended for staff). This endpoint also supports query parameters (e.g. GET /bookings?municipality=Aveiro\&?date=2025-11-05) to filter the results by municipality and current date.
     \item \textbf{DELETE /bookings/\{id\}} - Remove a booking record (staff use). This permanently deletes the booking with the given internal ID from the database.
     \item \textbf{PATCH /bookings/\{id\}?status=\{newStatus\}} - Update the state of a booking (staff use). The \{id\} in the URL is the internal ID of the booking and \{newStatus\} is the new state.
 
-    \item \textbf{GET /bookings/available-slots} - Returns a list of available time slots for a specific date and municipality, according to the bookings already set up on that day and municioality.
+    \item \textbf{GET /bookings/available-slots} - Returns a list of available time slots for a specific date and municipality, according to the bookings already set up on that day and municipality.
     \item \textbf{GET /municipalities} - Gets the municipalities names from other API. It has a fallback in case the \texttt{geoapi.pt} returns nothing or something invalid.
 \end{itemize}
 
-These endpoints make it possible to interact with ZeroMonos from other front-ends or integrate it into a larger platform.
+These endpoints make it possible to interact with \texttt{ZeroMonos} from other front-ends or integrate it into a larger platform.
 
 \begin{figure}[ht]
     \centering
@@ -126,7 +126,7 @@ These endpoints make it possible to interact with ZeroMonos from other front-end
 
 The project adopted a layered testing strategy combining \textbf{unit tests}, \textbf{service tests} , \textbf{integration tests}, \textbf{functional tests}, and \textbf{performance simulations}.
 
-The tests rely on \texttt{JUnit 5} and \texttt{Mockito} for unit and service tests, and used Spring’s \texttt{MockMvc} for API integration testing. \texttt{Selenium WebDriver} enabled BDD-style UI automation tests. Finally, non-functional testing was implemented using \texttt{k6} scripts to stress-test the app.
+The tests rely on \texttt{JUnit 5} and \texttt{Mockito} for unit and service tests, and use Spring’s \texttt{MockMvc} for API integration testing. \texttt{Selenium WebDriver} enabled BDD-style UI automation tests. Finally, non-functional testing was implemented using \texttt{k6} scripts to stress-test the app.
 
 For code analysis, a CI pipeline integrated with \texttt{SonarQube Cloud} was used.
 
@@ -145,7 +145,7 @@ Unit tests were used extensively for core business logic, particularly within \t
   \item \textbf{MunicipalityServiceTest:} handles the geo API and tests the fallback behavior
 \end{itemize}
 
-Integration tests leveraged Spring Boot's \texttt{@SpringBootTest} and \textit{MockMvc} to test real HTTP interactions and application state via the controllers. Scenarios covered include all the main REST operations from the defined API (see Section~\ref{sec:apifordevelopers}).
+Integration tests leverage Spring Boot's \texttt{@SpringBootTest} and \textit{MockMvc} to test real HTTP interactions and application state via the controllers. Scenarios covered include all the main REST operations from the defined API (see Section~\ref{sec:apifordevelopers}).
 
 \begin{itemize}
   \item \textbf{BookingControllerTest} validates all booking related API flows.
@@ -162,13 +162,13 @@ The end-user functionality was tested using Selenium WebDriver in a BDD-like sty
 \begin{itemize}
   \item Citizen successfully books two collection slots in different municipalities.
   \item Staff views that newly created bookings and updates it's state.
-  \item Staff filters the bookings by municipality, seeing them both separated.
+  \item Staff filters the bookings by municipality, seeing them both separately.
   \item Citizen checks booking status using a token and cancels it.
 \end{itemize}
 
 Tests were executed sequentially, reusing state between steps when necessary, and included verification of UI changes and database effects.
 
-I also generated a \texttt{Lighthouse} report for the intial web page and got very high scores (see Fig~\ref{fig: lighthousereport}).
+I also generated a \texttt{Lighthouse} report for the initial web page and got very high scores (see Fig~\ref{fig: lighthousereport}).
 
 \begin{figure}[ht]
     \centering
@@ -198,8 +198,8 @@ The configured \textit{Quality Gate} enforces a minimum coverage threshold and b
 The project passed the configured \textit{Quality Gate}, but initial scans revealed several issues that were later resolved such as:
 
 \begin{itemize}
-	\item \textbf{Security}: The use of \texttt{@CrossOrigin} without restriction allowed all domains by default. This was flagged as a security and I needed to manually allow traffic from my app's controllers.
-	\item \textbf{Maintainability}: There were 2 main issues. First the use of hardcodeded pauses (\texttt{Thread.sleep()}) on tests, which were replaced with condition-based waits. Second, there some logging being done via \texttt{System.err.println}, which were replaced with SLF4J logging to allow proper log levels and structured output.
+	\item \textbf{Security}: The use of \texttt{@CrossOrigin} without restrictions allowed all domains by default. This was flagged as a security issue, and I needed to manually allow traffic from my app's controllers.
+	\item \textbf{Maintainability}: There were 2 main issues. First, the use of hardcoded pauses (\texttt{Thread.sleep()}) in tests, which were replaced with condition-based waits. Second, there was some logging being done via \texttt{System.err.println}, which was replaced with SLF4J logging to allow proper log levels and structured output.
 \end{itemize}
 
 After these issues were solved, the \texttt{SonarQube} report showed no issues at all and total code coverage of 88.3\%, which is in the optimal threshold of >= 80\% (see Fig~\ref{fig:sonarqube}).
